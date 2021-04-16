@@ -1,0 +1,85 @@
+--menu--
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+   <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="header">
+                                <h2>
+                                    REGISTRO DE PACIENTES
+                                </h2>
+                            </div>
+                            <br>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="txtnombre">Nombre</label>
+                                        <div class="form-line">
+                                            <input type="text" id="txtnombre" class="form-control" placeholder="Digite Nombres" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="txtapellidos">Apellidos</label>
+                                        <div class="form-line">
+                                            <input type="text" id="txtapellidos" class="form-control" placeholder="Digite Apellidos" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="txtfechanacimiento">Fecha de Nacimiento</label>
+                                        <div class="form-line">
+                                            <input type="date" id="txtfechanacimiento" class="form-control" placeholder="Digite Nombre" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="txtdireccion">Dirección</label>
+                                        <div class="form-line">
+                                            <input type="text" id="txtdireccion" class="form-control" placeholder="Digite Dirección" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="txtdui">DUI</label>
+                                        <div class="form-line">
+                                            <input type="text" id="txtdui" class="form-control" placeholder="Digite DUI" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+                                    <div class="form-group">
+                                        <label for="txtnit">NIT</label>
+                                        <div class="form-line">
+                                            <input type="text" id="txtnit" class="form-control" placeholder="Digite NIT" disabled="disabled">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <button id="btnnuevo" onclick="CrearNuevo();" type="button" class="btn btn-primary btn-circle-lg waves-effect waves-circle waves-float btn-flotante" data-toggle="tooltip" data-placement="top" title="Nuevo Paciente">
+                <i class="material-icons">note_add</i>
+            </button>
+            <button id="btnguardar" onclick="Guardar();" type="button" class="btn btn-success btn-circle-lg waves-effect waves-circle waves-float btn-flotantesave" data-toggle="tooltip" data-placement="top" title="Guardar Paciente" disabled="disabled">
+                <i class="material-icons">save_alt</i>
+            </button>
+        </div>
+        <script>
+            $('#txtnit').mask('9999-999999-999-9');
+            $('#txtdui').mask('99999999-9');
+         
+        </script>
+      <script src="../Estilos/js/RegistroPac.js"></script>
+    </section>
