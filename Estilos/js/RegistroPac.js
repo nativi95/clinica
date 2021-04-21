@@ -26,14 +26,38 @@ function CrearNuevo(){
 function Guardar(){
     var sin = confirm("Esta seguro de guardar la informacion?");
     if (sin){
-
-        ok();
+        var nombre = document.getElementById('txtnombre').value;
+        var apellidos = document.getElementById('txtapellidos').value;
+        var fechanacimiento = document.getElementById('txtfechanacimiento').value;
+        var direccion = document.getElementById('txtdireccion').value;
+        var dui = document.getElementById('txtdui').value;
+        var nit = document.getElementById('txtnit').value;
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.onreadystatechange = function(){
+        //     if(xhttp.readyState == 4 && xhttp.status == 200){
+        //         ok();
+        //     }
+        // };
+        // xhttp.open("POST","../../Forms/RegistroPacientes.php",true);
+        // xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        // xhttp.send("nombre="+nombre+"&apellido="+apellidos+"&fecha="+fechanacimiento+"&direccion="+direccion+"&dui="+dui+"&nit="+nit);
+        $.ajax({
+            type: "POST",
+            url: "../Forms/RegistroPacientes.php",
+            async:false,
+            data: {nombre:nombre, apellido:apellidos, fecha:fechanacimiento, direccion:direccion, dui:dui, nit:nit,accion:"guardar"},
+            success: function(response){
+                var js = JSON.parse(response);
+                ok(js[0].ntarjeta,js[0].guardado);
+                alert("Ha sido ejecutada la acción.");
+            }
+        });
     }
 }
-function ok(){
+function ok(ntarjeta,result){
     swal({
-        title: "TARJETA # ",
-        text: "La informacion se ha guardado correctamente!",
+        title: "TARJETA # "+ntarjeta,
+        text: result,
         type: "success",
         showCancelButton: false,
         confirmButtonClass: "btn-success",
